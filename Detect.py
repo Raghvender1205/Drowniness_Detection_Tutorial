@@ -23,7 +23,7 @@ cap = cv.VideoCapture(0)
 flag = 0
 while True:
     ret, frame = cap.read()
-    frame = imutils.resize(frame, width=450)
+    frame = imutils.resize(frame, width=600)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     subjects = detect(gray, 0)
     for subject in subjects:
@@ -44,7 +44,7 @@ while True:
             if flag >= frame_check:
                 cv.putText(frame, "*********************************ALERT!!*****************************************", (10, 30), 
                         cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-                cv.putText(frame, "*********************************ALERT!!*****************************************",(10, 325),
+                cv.putText(frame, "*********************************ALERT!!*****************************************",(10, 425),
                         cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
         
         else:
